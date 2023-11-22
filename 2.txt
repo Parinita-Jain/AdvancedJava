@@ -1,0 +1,40 @@
+http://localhost:8080/
+
+javax.servlet ==> interface and classes that will be used by the servlet and the web container
+
+javax.servlet.http ==> interface and classes to handle http request
+
+Create the servlet ===> Create any normal java class
+
+But convert this java class into servlet class, there are 3 ways to do it:
+
+1. implement Servlet interface ===> defines the main life-cycle method of servlet
+
+2. extend abstract GenericServlet class  ===> any service method is abstract method
+
+3. extend HttpServlet class
+
+Servlet interface ===> GenericServlet ===> HttpServlet ===> Your Servlet
+
+Normally we will use the HttpServlet class to create the servlet, major reason is the protocol http that is used to send the request and response, this class HttpServlet has the method for different Http request
+
+eg. get ====> doGet
+	post ====> doPost 
+
+---------------------------------------------------------
+Life Cycle of the Servlet
+1. Load servlet class ===> load the class file in the web container
+2. Create servlet instance ===> web container will create the instance/object of the servlet class, only one object of the servlet will be created.
+3. Call the init(-) method ===> web container will call the init(-) method defined in the servlet, this method is called only once.
+4. Call the service(-,-) ===> web container will call this method only when someone request for the servlet. This method will be called for every request on the servlet. The main business logic will created in this method as this method handles the request and generate the response that will be send back.
+5. Call the destroy() ===> web container will call this when the instance/object of the servlet class is removed or destroyed.
+
+---------------------------------------------------------
+
+To identify any class as the servlet we can use the following techniques:
+1. Using annotation
+2. Using deployment descriptor (web.xml)
+
+
+--------------------------------------------------
+include one servlet code in another servlet ===> RequestDispatcher and use it function include()
