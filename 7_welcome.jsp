@@ -1,6 +1,8 @@
 <%@page import="java.time.LocalDateTime"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+ <%@ include file="header.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,9 +15,18 @@
 
 <% String username = request.getParameter("username"); 
 	String password = request.getParameter("password");
+	
+	
+	
 	if (username.equals(password))
 	{ %>
-		<h1>Welcome, <%= username%></h1>
+
+<%String bgcolor = (String)application.getAttribute("bgcolor"); %>
+	
+	<%=bgcolor %>
+		<!-- <h1>Welcome, <%= username%></h1>-->
+		
+		<h1>Welcome <%out.print(username); %></h1>
 		
 		<form action="add.jsp">
 			Number1:
