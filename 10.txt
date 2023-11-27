@@ -1,0 +1,57 @@
+Income Expense Application ===> User should be able to login and keep the track of the income details and expense details. We can also add new users. Able to display the income and expense details.
+
+Register
+Login
+Add Income
+Add Expense
+Income List
+Expense List
+About Us
+
+MVC
+
+M ==> Model ==> Class represent the state of the application, data that is stored in the database is mapped as the object of this class
+V ==> View ==> JSP page which will be the final response presented to the user(client).
+C ==> Controller ==> Servlet which will acts as the interface for all the incoming request and will also acts as a bridge between view and model.
+
+DAO ==> Data Access Object ==> Class which will used to interact with the database. This class will contain the commands like insert, update, delete, select to perform task on the database.
+
+Utility ==> Class that will acts as the helper class for performing some extra work. Here we can use it to connect with the database
+
+Example:
+
+Display the data from the database:
+
+1. Connect the database
+2. Use DAO class to perform task on the database
+3. Load/Create the object of the corresponding model class
+4. Passing these objects to the view
+5. View will display the data from the object
+
+---------------------------------------------------------
+Create the database and required tables in the database:
+
+Tables:
+
+User
+- userid
+- name
+- email
+- contact
+- password
+
+Income
+- income id
+- userid ==> foreign key (userid=>user)
+- income amount
+- income type
+- income date
+- description
+
+Expense
+- expense id
+- userid ==> foreign key (userid=>user)
+- expense amount
+- expense type
+- expense date
+- description
